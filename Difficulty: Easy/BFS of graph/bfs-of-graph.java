@@ -10,28 +10,23 @@ import java.util.*;
 class Solution {
     // Function to return Breadth First Search Traversal of given graph.
     public ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
-         ArrayList<Integer> bfsTraversal = new ArrayList<>();
-        boolean[] visited = new boolean[adj.size()];
-        Queue<Integer> queue = new LinkedList<>();
-
-     
-        queue.add(0);
-        visited[0] = true;
-
-        while (!queue.isEmpty()) {
-            int current = queue.poll();
-            bfsTraversal.add(current);
-
-            for (int neighbor : adj.get(current)) {
-                if (!visited[neighbor]) {
-                    queue.add(neighbor);
-                    visited[neighbor] = true;
+        // code here
+        ArrayList<Integer> ans=new ArrayList<>();
+        boolean visited[]=new boolean[adj.size()];
+        Queue<Integer> q=new LinkedList<>();
+        visited[0]=true;
+        q.add(0);
+        while(!q.isEmpty()){
+            int node=q.poll();
+            ans.add(node);
+            for(int neighbour:adj.get(node)){
+                if(!visited[neighbour]){
+                    visited[neighbour]=true;
+                    q.add(neighbour);
                 }
             }
         }
-
-        return bfsTraversal;
-        
+        return ans;
     }
 }
 
