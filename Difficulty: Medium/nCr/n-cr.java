@@ -1,6 +1,4 @@
 //{ Driver Code Starts
-// Initial Template for Java
-
 import java.io.*;
 import java.lang.*;
 import java.util.*;
@@ -15,12 +13,15 @@ class GFG {
             int r = sc.nextInt();
             Solution ob = new Solution();
             System.out.println(ob.nCr(n, r));
+            System.out.println("~");
         }
 
         sc.close();
     }
 }
 // } Driver Code Ends
+
+
 
 
 // User function Template for Java
